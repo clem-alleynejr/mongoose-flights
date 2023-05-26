@@ -50,8 +50,7 @@
 
 
   <h2>Ticket List</h2>
-  &nbsp;|&nbsp;
-  <a href="/flights/new">Add New Ticket</a>
+  <a href="/flights/<%= flight._id %>/tickets/new">Add New Ticket</a>
 <table>
     <thead>
         <tr>
@@ -64,8 +63,8 @@
         <% tickets.forEach(function(t) { %>
            <tr>
             <td><%= t.seat %></td>
-            <td><%= f.price %></td>
-            <td><%= f.flight %></td>
+            <td><%= t.price %></td>
+            <td><%= t.flight.flightNo%></td>
            </tr> 
         <% }) %>
     </tbody>
