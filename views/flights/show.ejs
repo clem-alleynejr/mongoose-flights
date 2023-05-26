@@ -38,7 +38,6 @@
       <tbody>
         <% flight.destinations.forEach(function(d) { %>
           <tr>
-            <!-- .toLocaleDateString() provides a more friendly date format -->
             <td><%= d.airport %></td>
             <td><%= d.arrival %></td>
           </tr>
@@ -48,5 +47,28 @@
   <% } else { %>
     <h5>No Destinations Yet</h5>
   <% } %>
+
+
+  <h2>Ticket List</h2>
+  &nbsp;|&nbsp;
+  <a href="/flights/new">Add New Ticket</a>
+<table>
+    <thead>
+        <tr>
+            <th>Seat</th>
+            <th>Price</th>
+            <th>Flight</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% tickets.forEach(function(t) { %>
+           <tr>
+            <td><%= t.seat %></td>
+            <td><%= f.price %></td>
+            <td><%= f.flight %></td>
+           </tr> 
+        <% }) %>
+    </tbody>
+</table>
 
 <%- include('../partials/footer') %>
